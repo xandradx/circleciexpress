@@ -35,14 +35,15 @@ jobs:
         paths:
         - ~/.npm
     - run: 
-        command: mkdir ~/report
+        name: Create report directory
+        command: mkdir ~/reports
         
     - run:
         command: npm run test
         name: Run NPM Tests
         working_directory: ~/project
         environment:
-          MOCHA_FILE: ~/report/test-results.xml
+          MOCHA_FILE: ~/reports/test-results.xml
     - store_test_results:
         path: ~/reports
     - store_artifacts:
