@@ -39,7 +39,7 @@ jobs:
         command: mkdir reports
         
     - run:
-        command: mocha test.js  --recursive --reporter mocha-junit-reporter --reporter-options  mochaFile=reports/test-mocha.xml
+        command: npm run test
         name: Run NPM Tests
         working_directory: ~/project
     - store_test_results:
